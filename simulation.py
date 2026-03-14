@@ -1,9 +1,10 @@
 """
-I did my best to keep this as similar to the textbook examples as possible. 
-I changed the variable names a bit, but the logic is mostly the same. I did
-make some changes to improve the code, such as using "is not None" instead of
-the textbook's "!=". I used a file path for main instead of url because the 
-assignment instructions mentioned file instead of url.
+I did my best to keep this similar to the textbook examples, though I changed 
+the variable names a bit, but the output is mostly the same. I did make some 
+adjustments to the code too, such as using "is not None" instead of the textbook's
+"!=" becasue I was told that's a better way of writing that line. I used a file 
+path for main instead of url because the assignment instructions mentioned file 
+instead of url.
 """
 
 from queue import Queue
