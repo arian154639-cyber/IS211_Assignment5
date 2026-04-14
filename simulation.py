@@ -2,7 +2,8 @@
 I did my best to keep this similar to the textbook examples, though I changed 
 the variable names a bit, and some of the structure, but the output is mostly 
 the same. I used a file path for main instead of url because the assignment 
-instructions mentioned file instead of url.
+instructions mentioned file instead of url. I also used some things I came across
+in my reaearch such as the use of "any" to avoid more verbose statements.
 """
 
 from queue import Queue
