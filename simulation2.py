@@ -11,30 +11,38 @@ from queue import Queue
 import csv
 import argparse
 
+
 class Request:
     def __init__(self, arrival_time, user_request, process_time):
         self.arrival_time = arrival_time
         self.user_request = user_request
         self.process_time = process_time
+
     def wait_time(self, current_time):
         return current_time - self.arrival_time
+
 
 class Server:
     def __init__(self):
         self.current_request = None
         self.time_remaining = 0
+
     def tick(self):
         if self.current_request != None:
             self.time_remaining -= 1
             if self.time_remaining <= 0:
                 self.current_request = None
+
     def busy(self):
         return self.current_request != None
+
     def start_next(self, request):
         self.current_request = request
         self.time_remaining = request.process_time
 
+
 def simulateOneServer(input_csv):
+
     requests = []
 
     with open(input_csv, newline='', encoding='utf-8-sig') as csvfile:
@@ -51,13 +59,21 @@ def simulateOneServer(input_csv):
 
     current_second = 0
 
-    while requests or not request_queue.empty() or server.busy():
+    max_arrival_time = max(request.arrival_time for request in requests)
 
-        arriving = [request for request in requests if request.arrival_time == current_second]
+    while (
+        request_queue.qsize() > 0
+        or server.busy()
+        or current_second <= max_arrival_time
+    ):
+
+        arriving = [
+            request for request in requests
+            if request.arrival_time == current_second
+        ]
 
         for request in arriving:
             request_queue.put(request)
-            requests.remove(request)
 
         if not server.busy() and not request_queue.empty():
             next_request = request_queue.get()
@@ -70,7 +86,9 @@ def simulateOneServer(input_csv):
     average_wait = sum(wait_times) / len(wait_times) if wait_times else 0
     print(f"Average Wait: {average_wait:.2f} seconds")
 
+
 def simulateManyServers(input_csv, num_servers):
+
     requests = []
 
     with open(input_csv, newline='', encoding='utf-8-sig') as csvfile:
@@ -88,17 +106,21 @@ def simulateManyServers(input_csv, num_servers):
     current_second = 0
     round_robin_index = 0
 
-    while(
-        requests
-        or any(not queue.empty() for queue in queues)
+    max_arrival_time = max(request.arrival_time for request in requests)
+
+    while (
+        any(not queue.empty() for queue in queues)
         or any(server.busy() for server in servers)
+        or current_second <= max_arrival_time
     ):
 
-        arriving = [request for request in requests if request.arrival_time == current_second]
+        arriving = [
+            request for request in requests
+            if request.arrival_time == current_second
+        ]
 
         for request in arriving:
             queues[round_robin_index].put(request)
-            requests.remove(request)
 
             round_robin_index += 1
             if round_robin_index >= num_servers:
@@ -121,15 +143,18 @@ def simulateManyServers(input_csv, num_servers):
     average_wait = sum(wait_times) / len(wait_times) if wait_times else 0
     print(f"Average Wait ({num_servers} servers): {average_wait:.2f} seconds")
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--file", type=str, required=True)
     parser.add_argument("--servers", type=int, default=1)
     args = parser.parse_args()
+
     if args.servers <= 1:
         simulateOneServer(args.file)
     else:
         simulateManyServers(args.file, args.servers)
+
 
 if __name__ == "__main__":
     main()

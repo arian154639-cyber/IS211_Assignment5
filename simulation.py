@@ -6,6 +6,7 @@ instructions mentioned file instead of url. I also used some things I came acros
 in my reaearch such as the use of "any" to avoid more verbose statements.
 """
 
+
 from queue import Queue
 import csv
 import argparse
@@ -16,25 +17,32 @@ class Request:
         self.arrival_time = arrival_time
         self.user_request = user_request
         self.process_time = process_time
+
     def wait_time(self, current_time):
         return current_time - self.arrival_time
+
 
 class Server:
     def __init__(self):
         self.current_request = None
         self.time_remaining = 0
+
     def tick(self):
         if self.current_request != None:
             self.time_remaining -= 1
             if self.time_remaining <= 0:
                 self.current_request = None
+
     def busy(self):
         return self.current_request != None
+
     def start_next(self, request):
         self.current_request = request
         self.time_remaining = request.process_time
 
+
 def simulateOneServer(input_csv):
+
     requests = []
 
     with open(input_csv, newline='', encoding='utf-8-sig') as csvfile:
@@ -51,13 +59,21 @@ def simulateOneServer(input_csv):
 
     current_second = 0
 
-    while requests or not request_queue.empty() or server.busy():
+    max_arrival_time = max(request.arrival_time for request in requests)
 
-        arriving = [request for request in requests if request.arrival_time == current_second]
+    while (
+        request_queue.qsize() > 0
+        or server.busy()
+        or current_second <= max_arrival_time
+    ):
+
+        arriving = [
+            request for request in requests
+            if request.arrival_time == current_second
+        ]
 
         for request in arriving:
             request_queue.put(request)
-            requests.remove(request)
 
         if not server.busy() and not request_queue.empty():
             next_request = request_queue.get()
