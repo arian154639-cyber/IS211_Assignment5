@@ -4,6 +4,11 @@ the variable names a bit, and some of the structure, but the output is mostly
 the same. I used a file path for main instead of url because the assignment 
 instructions mentioned file instead of url. I also used some things I came across
 in my reaearch such as the use of "any" to avoid more verbose statements.
+
+May 22 Update: Just a note, I thought I should mention that for this assignment I 
+also did more research and reading than usual because I used Python's queue instead 
+of the custom queue created in the textbook. I essentially tried keeping the structure
+while using Python's queue.
 """
 
 
