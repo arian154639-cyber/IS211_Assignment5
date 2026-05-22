@@ -7,8 +7,9 @@ in my reaearch such as the use of "any" to avoid more verbose statements.
 
 May 22 Update: Just a note, I thought I should mention that for this assignment I 
 also did more research and reading than usual because I used Python's queue instead 
-of the custom queue created in the textbook. I essentially tried keeping the structure
-while using Python's queue.
+of the custom queue created in the textbook. I know it's not the most efficient 
+solution, I found this to be the most difficult assignment in the course, as mentioned 
+a few weeks ago.
 """
 
 
