@@ -1,10 +1,10 @@
 """
 I did my best to keep this similar to the textbook examples, though I changed the variable 
-names a bit, and some of the structure. I used a file path for main instead of url because 
-the assignment instructions mentioned file instead of url. I also used some things I came 
-across in my reaearch such as the use of "any" to avoid more verbose statements.
+names a bit, and some of the structure. I used file for main instead of url because the 
+assignment instructions mentioned file instead of url. I also used some things I came across 
+in my reaearch such as the use of "any" to avoid more verbose statements.
 
-May 22 Update: I thought I should mention that for this assignment I also did more research 
+May 23 Update: I thought I should mention that for this assignment I also did more research 
 and reading than usual because I used Python's queue instead of the custom queue created in 
 the textbook. I had a message print if "--file" was not entered because the script needs a 
 file to run properly, but the directions said to use "--file" (which is an optional argument) 
@@ -94,15 +94,15 @@ def simulateOneServer(input_csv):
         current_second += 1
 
     average_wait = sum(wait_times) / len(wait_times) if wait_times else 0
-    print(f"Average Wait: {average_wait:.2f} seconds")
+    print(f'Average Wait: {average_wait:.2f} seconds')
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--file", type=str)
+    parser.add_argument('--file', type=str)
     args = parser.parse_args()
 
     if not args.file:   # This was included becasue the script needs a CSV to work properly
-        print("No file provided. Simulation paused.")
+        print('No file provided. Simulation paused.')
         return
 
     simulateOneServer(args.file)
