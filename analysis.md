@@ -1,7 +1,7 @@
 After running both simulations, my results were approximately 5000 seconds for simulateOneServer and 23 seconds when using 2 servers in simulateManyServers. The simulation times differ in that the single server simulation has much higher latency because the requests arrive faster than the server can process. With 2 servers, the load balancer can keep distributing requests between them via the round robin system, allowing for lower latency.
 
 
-NOTE: BELOW IS THE DOCSTRING FOR BOTH PYTHON FILES. 
+NOTE: BELOW IS THE DOCSTRING FOR SIMULATION2.PY. 
 
 I did my best to keep this similar to the textbook examples, though I changed the variable names a bit, and some of the structure, but the output is mostly the same. I used file for main instead of url because the assignment instructions mentioned file instead of url. I also used some things I came across in my reaearch such as the use of "any" to avoid more verbose statements.
 
