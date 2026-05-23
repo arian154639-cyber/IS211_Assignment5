@@ -163,7 +163,11 @@ def main():
         print('No file provided. Simulation paused.')
         return
 
-    if args.servers <= 1:
+    if args.servers < 1:   # This was done to ensure no negatives or zero for the --servers argument
+        print('The minimum number of servers for proper functionality is 1.')
+        return
+
+    if args.servers == 1:
         simulateOneServer(args.file)
     else:
         simulateManyServers(args.file, args.servers)
