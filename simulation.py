@@ -13,6 +13,9 @@ difficult assignment in the course, as mentioned during office hours. My apologi
 errors, I've been stressed this semester because of it being my last one. Lastly, if my memory 
 is correct, I was told during office hours that this assignment does not count. However, in case 
 this assignment does get looked at or graded, I did some small improvements and left this note.
+
+Note: I deleted the old python files in the repositiory and replaced them with this new file called 
+simulation.py, which is just one of those old files but renamed to meet assignment requirements.
 """
 
 from queue import Queue
