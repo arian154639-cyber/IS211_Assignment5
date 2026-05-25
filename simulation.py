@@ -5,12 +5,12 @@ bit, and some of the structure.
 End of Semester Update: I thought I should mention that for this assignment I also did more 
 research and reading than usual because I used Python's queue instead of the custom queue created 
 in the textbook. I had a message print if "--file" was not entered because the script needs a 
-file to run properly, but the directions said to use "--file" (which is an optional argument) 
-so I did. I know this simulation isn't the most efficient solution, I found this to be the most 
-difficult assignment in the course, as mentioned during office hours. My apologies if there's 
-errors, I've been stressed this semester because of it being my last one. Lastly, if my memory 
-is correct, I was told during office hours that this assignment does not count. However, in case 
-this assignment does get looked at or graded, I did some small improvements and left this note.
+file to run properly, but the directions said to use "--file" so I did. I know this simulation 
+isn't the most efficient solution, I found this to be the most difficult assignment in the course, 
+as mentioned during office hours. My apologies if there's errors, I've been stressed this semester 
+because of it being my last one. Lastly, if my memory is correct, I was told during office hours 
+that this assignment does not count. However, in case this assignment does get looked at or graded, 
+I did some small improvements and left this note.
 
 Note: I deleted the old python files in the repositiory and replaced them with this new file called 
 simulation.py, which is just one of those old files but renamed to meet assignment requirements.
@@ -146,7 +146,7 @@ def main():
             process_time = int(row[2])
             requests.append(Request(arrival_time, user_request, process_time))
 
-    if args.servers < 1:   # This was done to ensure no negatives or zero for the --servers argument
+    if args.servers < 1:   # This was done to ensure no negatives or zero for the input
         print('The minimum number of servers for proper functionality is 1.')
         return
 
