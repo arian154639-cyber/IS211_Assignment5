@@ -1,8 +1,7 @@
 """
 I did my best to keep this similar to the textbook examples, though I changed the variable names a 
-bit, and some of the structure. I used args.file in main() because the assignment instructions 
-mentioned using "--file" as an argument. I also used some things I came across in my reaearch such 
-as the use of "any" to avoid more verbose statements.
+bit, and some of the structure. I also used some things I came across in my research such as the use 
+of "any" to avoid more verbose statements.
 
 End of Semester Update: I thought I should mention that for this assignment I also did more 
 research and reading than usual because I used Python's queue instead of the custom queue created 
