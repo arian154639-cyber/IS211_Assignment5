@@ -2,7 +2,7 @@ After running both simulations, my results were approximately 5000 seconds for s
 
 NOTE: BELOW IS THE DOCSTRING FOR SIMULATION.PY. 
 
-I did my best to keep this similar to the textbook examples, though I changed the variable names a bit, and some of the structure. I also used some things I came across in my research such as the use of "any" to avoid more verbose statements.
+I did my best to keep this similar to the textbook examples, though I changed the variable names a bit, and some of the structure.
 
 End of Semester Update: I thought I should mention that for this assignment I also did more research and reading than usual because I used Python's queue instead of the custom queue created in the textbook. I had a message print if "--file" was not entered because the script needs a file to run properly, but the directions said to use "--file" (which is an optional argument) so I did. I know this simulation isn't the most efficient solution, I found this to be the most difficult assignment in the course, as mentioned during office hours. My apologies if there's errors, I've been stressed this semester because of it being my last one. Lastly, if my memory is correct, I was told during office hours that this assignment does not count. However, in case this assignment does get looked at or graded, I did some small improvements and left this note.
 

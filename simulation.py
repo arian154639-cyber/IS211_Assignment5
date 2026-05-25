@@ -1,7 +1,6 @@
 """
 I did my best to keep this similar to the textbook examples, though I changed the variable names a 
-bit, and some of the structure. I also used some things I came across in my research such as the use 
-of "any" to avoid more verbose statements.
+bit, and some of the structure.
 
 End of Semester Update: I thought I should mention that for this assignment I also did more 
 research and reading than usual because I used Python's queue instead of the custom queue created 
