@@ -81,7 +81,6 @@ def simulateOneServer(requests):
     print(f'Average Wait: {average_wait:.2f} seconds')
 
 def simulateManyServers(requests, num_servers):
-
     servers = [Server() for _ in range(num_servers)]
     request_queues = [Queue() for _ in range(num_servers)]
     wait_times = []
